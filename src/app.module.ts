@@ -9,9 +9,11 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
+      type: 'postgres',
       url: process.env.DATABASE_URL,
-      entities: [Todo],
+      autoLoadEntities: true,
     }),
+    TypeOrmModule.forFeature([Todo]),
   ],
   controllers: [AppController],
   providers: [AppService],
