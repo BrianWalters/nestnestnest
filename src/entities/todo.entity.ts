@@ -8,9 +8,9 @@ export class Todo {
   @Column()
   title: string;
 
-  @Column()
-  description: string;
+  @Column({ nullable: true })
+  description: string | null;
 
-  @Column()
+  @Column({ default: 0 })
   done: boolean;
 }

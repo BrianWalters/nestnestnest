@@ -1,3 +1,22 @@
 {{#> base}}
   <h1>Todo app</h1>
+
+  <h2>Add todo</h2>
+  <form action="/todo/create" method="post">
+    <div>
+      <label>
+        To do:
+        <input type="text" name="title">
+      </label>
+    </div>
+    <div>
+      <label>
+        Description:
+        <textarea name="description"></textarea>
+      </label>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
 {{/base}}
