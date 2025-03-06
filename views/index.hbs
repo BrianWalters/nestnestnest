@@ -31,10 +31,12 @@
             {{/if}}
             {{title}}
           </strong>
-          <form action="/todo/done" method="post">
-            <input type="hidden" name="id" value="{{id}}">
-            <button type="submit">Done</button>
-          </form>
+          {{#unless done}}
+            <form action="/todo/done" method="post">
+              <input type="hidden" name="id" value="{{id}}">
+              <button type="submit">Done</button>
+            </form>
+          {{/unless}}
         </div>
         {{# if description}}
           <div>{{description}}</div>
