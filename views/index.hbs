@@ -25,7 +25,16 @@
     {{#each todos }}
       <li>
         <div>
-          <strong>{{title}}</strong>
+          <strong>
+            {{# if done}}
+              ✅
+            {{/if}}
+            {{title}}
+          </strong>
+          <form action="/todo/done" method="post">
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="submit">Done</button>
+          </form>
         </div>
         {{# if description}}
           <div>{{description}}</div>

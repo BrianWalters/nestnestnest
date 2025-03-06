@@ -2,6 +2,7 @@ import { Body, Controller, Get, Post, Render, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
 import { CreateTodoDto } from './dto/CreateTodoDto';
+import { DoneTodoDto } from './dto/DoneTodoDto';
 
 @Controller()
 export class AppController {
@@ -22,6 +23,12 @@ export class AppController {
     @Body() createTodoDto: CreateTodoDto,
   ) {
     await this.appService.createTodo(createTodoDto);
+    return response.redirect('/');
+  }
+
+  @Post('/todo/done')
+  async doneTodo(@Res() response: Response, @Body() doneTodoDto: DoneTodoDto) {
+    await this.appService.doneTodo(doneTodoDto);
     return response.redirect('/');
   }
 }

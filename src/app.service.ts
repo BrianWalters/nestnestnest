@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Todo } from './entities/todo.entity';
 import { DataSource, Repository } from 'typeorm';
 import { CreateTodoDto } from './dto/CreateTodoDto';
+import { DoneTodoDto } from './dto/DoneTodoDto';
 
 @Injectable()
 export class AppService {
@@ -22,6 +23,20 @@ export class AppService {
       todo.title = todoDto.title;
       todo.description = todoDto.description;
       await entityManager.save(todo);
+    });
+  }
+
+  async doneTodo(todoDto: DoneTodoDto) {
+    await this.dataSource.transaction(async (entityManager) => {
+      const todo = await entityManager.findOne(Todo, {
+        where: {
+          id: todoDto.id,
+        },
+      });
+      if (todo) {
+        todo.done = true;
+        await entityManager.save(todo);
+      }
     });
   }
 }
