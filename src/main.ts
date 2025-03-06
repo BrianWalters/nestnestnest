@@ -9,7 +9,7 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setViewEngine('hbs');
-  hbs.registerPartials(join(__dirname, '..', 'views/partials'));
+  hbs.registerPartials(join(__dirname, '..', 'views/partials'), () => {});
   await app.listen(3000);
 }
 bootstrap();
