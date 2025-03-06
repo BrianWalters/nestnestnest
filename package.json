@@ -17,7 +17,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/jest/bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "ts-node ./node_modules/typeorm/cli"
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
+    "tailwind": "npx @tailwindcss/cli -i ./styles/main.css -o ./public/build/main.css --watch"
   },
   "engines": {
     "npm": ">=10.0.0",
@@ -29,10 +30,12 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/typeorm": "^11.0.0",
+    "@tailwindcss/cli": "^4.0.11",
     "hbs": "^4.2.0",
     "pg": "^8.13.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
+    "tailwindcss": "^4.0.11",
     "typeorm": "^0.3.21"
   },
   "devDependencies": {

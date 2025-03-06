@@ -2,15 +2,15 @@
   <h1>Todo app</h1>
 
   <h2>Add todo</h2>
-  <form action="/todo/create" method="post">
+  <form action="/todo/create" method="post" class="flex gap-2">
     <div>
-      <label>
+      <label class="flex items-start">
         To do:
         <input type="text" name="title">
       </label>
     </div>
     <div>
-      <label>
+      <label class="flex items-start">
         Description:
         <textarea name="description"></textarea>
       </label>
@@ -24,7 +24,7 @@
   <ol>
     {{#each todos }}
       <li>
-        <div>
+        <div class="flex">
           <strong>
             {{# if done}}
               ✅

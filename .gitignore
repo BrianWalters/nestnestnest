@@ -380,3 +380,6 @@ Temporary Items
 dist
 .webpack
 .serverless/**/*.zip
+.vercel
+
+public/build
