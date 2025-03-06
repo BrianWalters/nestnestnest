@@ -19,4 +19,18 @@
       <button type="submit">Submit</button>
     </div>
   </form>
+
+  <h2>Todos</h2>
+  <ol>
+    {{#each todos }}
+      <li>
+        <div>
+          <strong>{{title}}</strong>
+        </div>
+        {{# if description}}
+          <div>{{description}}</div>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
 {{/base}}

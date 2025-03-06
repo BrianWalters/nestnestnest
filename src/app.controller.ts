@@ -9,9 +9,10 @@ export class AppController {
 
   @Get()
   @Render('index')
-  root() {
+  async root() {
+    const todos = await this.appService.getTodos();
     return {
-      todos: this.appService.getTodos(),
+      todos,
     };
   }
 
