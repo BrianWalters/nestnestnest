@@ -14,7 +14,11 @@ export class AppService {
   ) {}
 
   getTodos() {
-    return this.todoRepository.find();
+    return this.todoRepository.find({
+      order: {
+        createdAt: 'asc',
+      },
+    });
   }
 
   async createTodo(todoDto: CreateTodoDto) {
