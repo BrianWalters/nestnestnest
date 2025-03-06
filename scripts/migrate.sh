@@ -1,0 +1,1 @@
+npm run typeorm migration:run -- -d src/cli-data-source.ts

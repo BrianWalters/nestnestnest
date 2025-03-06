@@ -22,6 +22,7 @@ export class AppService {
       const todo = new Todo();
       todo.title = todoDto.title;
       todo.description = todoDto.description;
+      todo.createdAt = new Date();
       await entityManager.save(todo);
     });
   }

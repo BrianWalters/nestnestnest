@@ -1,0 +1,1 @@
+npm run typeorm migration:generate -- -d src/cli-data-source.ts src/migrations/migration
