@@ -22,10 +22,10 @@
       {{#each todos }}
         <li class="rounded p-3">
           <div class="flex gap-4">
-            <strong class="{{# if done}}text-blue-500{{/if}}">
-              {{# if done}}
-                ✅
-              {{/if}}
+            {{# if done}}
+              ✅
+            {{/if}}
+            <strong class="{{# if done}} line-through {{/if}}">
               {{title}}
             </strong>
             {{#unless done}}
